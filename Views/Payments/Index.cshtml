@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVCJoelGramajoPrueba2.Models.Payment>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.paymentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.proName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.proName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PID })
+        </td>
+    </tr>
+}
+
+</table>

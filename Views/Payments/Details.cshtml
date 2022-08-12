@@ -1,0 +1,51 @@
+﻿@model MVCJoelGramajoPrueba2.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.proName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.proName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
